@@ -129,45 +129,62 @@
 // Check: Wrong again!  Answer was Mr Green.
 
 // Episode 8
-const scenario = {
-    murderer: 'Mrs. Peacock',
-    room: 'Conservatory',
-    weapon: 'Lead Pipe'
-}; 
-const changeScenario = function() {
-    scenario.murderer = 'Mrs. Peacock';
-    scenario.room = 'Dining Room';
-    // console.log(scenario.murderer)
+// const scenario = {
+//     murderer: 'Mrs. Peacock',
+//     room: 'Conservatory',
+//     weapon: 'Lead Pipe'
+// }; 
+// const changeScenario = function() {
+//     scenario.murderer = 'Mrs. Peacock';
+//     scenario.room = 'Dining Room';
+//     // console.log(scenario.murderer)
 
-    const plotTwist = function(room) {
-    if (scenario.room === room) {
-        scenario.murderer = 'Colonel Mustard';
-    }
+//     const plotTwist = function(room) {
+//     if (scenario.room === room) {
+//         scenario.murderer = 'Colonel Mustard';
+//     }
 
-    const unexpectedOutcome = function(murderer) {
-        if (scenario.murderer === murderer) {
-        scenario.weapon = 'Candle Stick';
-        }
-    }
+//     const unexpectedOutcome = function(murderer) {
+//         if (scenario.murderer === murderer) {
+//         scenario.weapon = 'Candle Stick';
+//         }
+//     }
 
-unexpectedOutcome('Colonel Mustard');
-console.log(scenario.murderer);
-console.log(scenario.weapon)
-}
+// unexpectedOutcome('Colonel Mustard');
+// console.log(scenario.murderer);
+// console.log(scenario.weapon)
+// }
 
-plotTwist('Dining Room');
-}
+// plotTwist('Dining Room');
+// }
 
-const declareWeapon = function() {
-return `The weapon is ${scenario.weapon}.`
-}
+// const declareWeapon = function() {
+// return `The weapon is ${scenario.weapon}.`
+// }
 
-changeScenario();
-const verdict = declareWeapon();
-console.log(verdict);
+// changeScenario();
+// const verdict = declareWeapon();
+// console.log(verdict);
 
 // Expected outcome: 'The weapon is Lead Pipe'.  
 // Outcome check: Wrong again.  The weapon is Candle Stick.
 // Have used console.log() to work out the flow and where I went wrong - I'm not getting how Colonel Mustard was the murderer after unexpectedOutcome() was called, because plotTwist() hadn't been called prior to it, so I thought the murderer at this point was still Mrs Peacock.
 
-// 
+// Episode 9
+
+let murderer = 'Professor Plum';
+// console.log(murderer)
+if (murderer === 'Professor Plum') {
+let murderer = 'Mrs. Peacock';
+}
+console.log(murderer)
+const declareMurderer = function() {
+return `The murderer is ${murderer}.`;
+}
+
+const verdict = declareMurderer();
+console.log(verdict);
+
+// Expected outcome: 'The murderer is Mrs. Peacock.'  
+// I will not be surprised if I am wrong though. 
+// Actual outcome: Professor Plum.  boooo.  Back to the drawing board. 
